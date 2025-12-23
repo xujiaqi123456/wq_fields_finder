@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "WQB Alpha Manager",
+  "version": "1.0",
+  "description": "Download and manage WQ Alphas",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.bundle.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.bundle.js"]
+    }
+  ]
+}
